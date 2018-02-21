@@ -1,6 +1,5 @@
 FROM alpine
 
-ADD run.sh /
-ENV AUTHORIZED_KEYS **None**
-VOLUME /user
+COPY run.sh /
+
 CMD ["/run.sh"]
