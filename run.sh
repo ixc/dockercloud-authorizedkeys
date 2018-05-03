@@ -18,6 +18,7 @@ if [ -n "$AUTHORIZED_KEYS" ]; then
 		fi
 	done
 	chmod 600 /user/.ssh/authorized_keys
+	chown $(stat /user/.ssh -c %u:%g) /user/.ssh/authorized_keys
 else
 	>&2 echo 'ERROR: $AUTHORIZED_KEYS is empty'
 	exit 1
